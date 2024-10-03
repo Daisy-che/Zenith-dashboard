@@ -68,7 +68,7 @@ const Login: React.FC = () => {
     <div className="flex flex-col sm:flex-row h-screen font-sans">
    
     <div className="hidden sm:flex sm:w-1/2 bg-blue-100 items-center justify-center p-2 sm:p-4 md:p-6 lg:p-8">
-      <img src="/lock.png" alt="Login illustration" className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" />
+      <img src="/images/lock.png" alt="Login illustration" className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" />
     </div>
   
     <div className="w-full sm:w-1/2 flex items-center justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-10">
