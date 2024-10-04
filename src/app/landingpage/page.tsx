@@ -4,7 +4,7 @@ export default function Landinpage() {
   return (
     <main className="relative min-h-screen flex items-center justify-center font-serif ">
       <Image
-        src="/images/smartdrainage.jpg"
+        src="/smartdrainage.jpg"
         alt="Tunnel background"
         fill
         className="object-cover"

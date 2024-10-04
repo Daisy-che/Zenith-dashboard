@@ -93,7 +93,7 @@ export default function SignUpForm() {
     <div className="flex flex-col lg:flex-row min-h-screen bg-white">
       <div className="w-full lg:w-1/2 flex items-center justify-center ">
         <Image
-          src="/images/background.png"
+          src="/background.png"
           alt="People assembling puzzle"
           width={600}
           height={600}

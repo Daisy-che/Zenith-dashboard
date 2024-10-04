@@ -29,7 +29,7 @@ const Sidebar = () => {
   return (
     <div className="w-100 bg-[#008fff] text-white p-5 h-screen font-serif display-block">
       <div className="flex items-center ">
-        <Image src="/images/aqualogo.png" alt="AquaSense Logo" width={270} height={180} className="" />
+        <Image src="/logo.png" alt="AquaSense Logo" width={270} height={180} className="" />
       </div>
       <nav className="space-y-9">
         <SidebarItem icon={<Home size={24} />} label="Home" path="/dashboard" />
