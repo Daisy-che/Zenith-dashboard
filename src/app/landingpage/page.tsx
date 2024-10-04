@@ -6,6 +6,7 @@ export default function Landinpage() {
       <Image
         src="/smartdrainage.jpg"
         alt="Tunnel background"
+        fill
        
         className="object-cover"
       />
