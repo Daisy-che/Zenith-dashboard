@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 interface Sensor {
   id: number;
   address: string;
