@@ -102,7 +102,7 @@ export default function SignUpForm() {
       </div>
       <div className="w-full lg:w-1/2 flex items-start justify-center lg:">
         <div className="max-w-md w-full">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-[#0088ff] text-center ">
+          <h2 className="text-3xl lg:text-4xl font-bold m-6 text-[#0088ff] text-center ">
             Sign Up
           </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
@@ -244,7 +244,7 @@ export default function SignUpForm() {
             <div>
               <button
                 type="submit"
-                className={`w-full mt-4 flex justify-center bg-[#008fff] text-white py-2 px-4 font-bold rounded-lg hover:bg-[#EF5B1C] transition-colors duration-300 ${
+                className={`w-full mt-4 flex justify-center bg-[#008fff] text-white py-2 px-4 font-bold rounded-lg hover:bg-[#008fff] transition-colors duration-300 ${
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 disabled={isSubmitting}
