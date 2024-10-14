@@ -1,4 +1,6 @@
+
 "use client";
+
 import React, { useEffect } from "react";
 import {
   LineChart,
@@ -15,8 +17,10 @@ import { getCookie } from "cookies-next";
 
 import Layout from "../components/Layout";
 import { useDrainageData } from "../components/hooks/useData";
+import AquasenseDashboard from "../notifications/page";
 
-const Dashboard = () => {
+
+const Dashboard: React.FC = () => {
   const router = useRouter();
   const { data, loading, error } = useDrainageData();
 
@@ -51,56 +55,41 @@ const Dashboard = () => {
   const lineChartData = processLineChartData(data);
   return (
     <Layout>
-      <div className="flex  bg-white  overflow-hidden">
-        <div className="flex-1  ml-[20%]">
-          <header className="flex justify-between items-center ">
+      <div className="flex bg-white overflow-hidden">
+        <div className="flex-1 ml-[20%]">
+          <header className="flex justify-between items-center">
             <div className="relative"></div>
-            <div className="flex items-center ">
-              <button className="mr-10">
-                <svg
-                  className="w-6 h-6 text-blue-500 "
-                  fill="#3B82F6"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
-              </button>
+            <div className="flex items-center">
+              <AquasenseDashboard/>
               <button>
                 <svg
-                  className="w-6 h-6 text-blue-500 "
+                  className="w-6 h-6 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
+                  {/* <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
+                  /> */}
                 </svg>
               </button>
             </div>
           </header>
           <main>
-            <h3 className="text-3xl  font-semibold  text-center text-blue-500  items-center ml-[-390px] mb-12 ">
+            <h3 className="text-3xl font-semibold text-center text-blue-500 items-center ml-[-390px] mb-12">
               Overview
             </h3>
-            <h2 className="text-xl  font-semibold  text-center   items-center  ml-[-360px]">
-              Rate of blockage in drainage system
+            <h2 className="text-xl font-semibold text-center items-center ml-[-360px]">
+              Water level and Water Pressure rate in the drainage system
             </h2>
             <div className="grid grid-cols-2">
-              <div className="mt-20 ml-[-260px] ">
+              <div className="mt-20 ml-[-260px]">
                 <div className="flex justify-center items-center space-x-16 mb-8">
-                  <div className="flex items-center ml-96 ">
+                  <div className="flex items-center ml-96">
                     <div className="w-8 h-7 bg-emerald-400 mr-2"></div>
                     <span className="text-gray-700 font-medium">
                       Water level
