@@ -105,7 +105,7 @@ export default function SignUpForm() {
           <h2 className="text-3xl lg:text-4xl font-bold m-6 text-[#0088ff] text-center ">
             Sign Up
           </h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div>
               <label
                 htmlFor="firstName"
