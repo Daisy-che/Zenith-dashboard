@@ -182,7 +182,7 @@ const WebSocketAPIExample = () => {
   const [distance, setDistance] = useState<string | null>(null);
   const [data, setData] = useState<DataPoint[]>([]);
   const [blockageDetected, setBlockageDetected] = useState<boolean>(false);
-  const threshold = 100; // 100 cm threshold
+  const threshold = 10; // 10 cm threshold
   const smsThreshold = 10; // 10 cm threshold for SMS alert
   useEffect(() => {
     const getData = async () => {
