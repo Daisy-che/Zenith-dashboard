@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { Home, BarChart2, Settings, LogOut } from 'lucide-react';
+import { Home, BarChart2, LineChart, LogOut } from 'lucide-react';
 
 const Sidebar = () => {
   const router = useRouter();
@@ -38,7 +38,8 @@ const Sidebar = () => {
       </div>
       <nav className="space-y-4">
         <SidebarItem icon={<Home size={24} />} label="Home" path="/dashboard" />
-        <SidebarItem icon={<BarChart2 size={24} />} label="System Performance" path="/systemperformance" />
+        <SidebarItem icon={<BarChart2 size={24} />} label="SystemPerformance" path="/systemperformance" />
+        <SidebarItem icon={<LineChart size={24} />} label="Datamonitoring" path="/datamonitoring" />
       </nav>
       <div className="absolute bottom-5 left-0 w-full px-5">
         <div
