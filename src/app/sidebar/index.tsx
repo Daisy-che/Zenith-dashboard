@@ -39,7 +39,7 @@ const Sidebar = () => {
       <nav className="space-y-4">
         <SidebarItem icon={<Home size={24} />} label="Home" path="/dashboard" />
         <SidebarItem icon={<BarChart2 size={24} />} label="SystemPerformance" path="/systemperformance" />
-        <SidebarItem icon={<LineChart size={24} />} label="Datamonitoring" path="/datamonitoring" />
+        {/* <SidebarItem icon={<LineChart size={24} />} label="Datamonitoring" path="/datamonitoring" /> */}
       </nav>
       <div className="absolute bottom-5 left-0 w-full px-5">
         <div
