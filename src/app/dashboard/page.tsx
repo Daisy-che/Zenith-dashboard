@@ -53,7 +53,7 @@ const WebSocketAPIExample = () => {
   const [fetchFailureCount, setFetchFailureCount] = useState(0);
   const [alertResponseTime, setAlertResponseTime] = useState<number | null>(null);
   const [blockageTimestamps, setBlockageTimestamps] = useState<number[]>([]);
-  const smsThreshold = 10;
+  const smsThreshold = 20;
   useEffect(() => {
     const getData = async () => {
       try {
