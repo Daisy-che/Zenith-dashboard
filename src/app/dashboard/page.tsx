@@ -1,4 +1,5 @@
-"use client";
+
+"use client"
 import { useEffect, useState } from "react";
 import {
   LineChart,
@@ -10,6 +11,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import AquasenseDashboard from "../notifications/page";
+import { FaBell } from 'react-icons/fa';
 
 import { fetchDistance } from "../components/utils/thingspeak";
 import Layout from "../components/Layout";
@@ -80,12 +83,12 @@ const WebSocketAPIExample = () => {
           if (numericDistance < smsThreshold) {
             setBlockageCount((prevCount) => prevCount + 1);
             setBlockageTimestamps((prevTimestamps) => [...prevTimestamps, Date.now()]);
-            // Calculate response time for SMS alert
+           
             const startAlertTime = performance.now();
             sendSMS(`Alert: Distance is ${numericDistance} cm, below the threshold.`);
             const endAlertTime = performance.now();
             setAlertResponseTime(endAlertTime - startAlertTime);
-            // Increment SMS alert count
+           
             setSmsCount((prev) => prev + 1);
           }
         });
@@ -102,6 +105,25 @@ const WebSocketAPIExample = () => {
       : null;
   return (
     <Layout>
+      <header className="flex justify-between items-center bg-gray-200">
+     
+            <div className="relative"></div>
+            <div className="flex items-center">
+               <AquasenseDashboard/> 
+               <button>
+              
+                <svg
+                  className="w-6 h-6 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                
+                </svg>
+              </button> 
+            </div>
+          </header>
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200 text-black">
       <div className="grid grid-cols-2 gap-4 p-8 w-full max-w-4xl">
         <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
@@ -134,6 +156,14 @@ const WebSocketAPIExample = () => {
       {/* Graph Section */}
       <div className="text-center p-8 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg mt-8">
   <h1 className="text-3xl font-bold mb-4">Drainage System Reading</h1>
+
+  {/* Blockage alert message */}
+  {distance && parseFloat(distance) < smsThreshold && (
+    <div className="text-red-600 text-lg font-semibold mb-4">
+      Blockage detected, SMS sent
+    </div>
+  )}
+
   <div className="text-xl mb-6">
     {distance ? (
       <p>
@@ -161,12 +191,4 @@ const WebSocketAPIExample = () => {
   );
 };
 export default WebSocketAPIExample;
-
-
-
-
-
-
-
-
 

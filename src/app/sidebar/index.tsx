@@ -32,13 +32,13 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-64 bg-[#008fff] text-white p-5 h-screen font-serif relative">
+    <div className="w-72 bg-[#008fff] text-white p-5 h-screen font-serif relative">
       <div className="flex items-center mb-8">
         <Image src="/logo.png" alt="AquaSense Logo" width={200} height={60} className="" />
       </div>
       <nav className="space-y-4">
         <SidebarItem icon={<Home size={24} />} label="Home" path="/dashboard" />
-        <SidebarItem icon={<BarChart2 size={24} />} label="SystemPerformance" path="/systemperformance" />
+        <SidebarItem icon={<BarChart2 size={24} />} label="System Performance" path="/systemperformance" />
         {/* <SidebarItem icon={<LineChart size={24} />} label="Datamonitoring" path="/datamonitoring" /> */}
       </nav>
       <div className="absolute bottom-5 left-0 w-full px-5">
