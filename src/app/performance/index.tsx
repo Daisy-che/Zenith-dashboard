@@ -18,7 +18,7 @@ const SensorTable: React.FC<SensorTableProps> = ({ sensorData }) => {
     .slice(0, 4); 
 
   return (
-    <div className="w-full   p-2 mt-4 border border-black nesthubmax:mt-96 nesthubmax:w-96">
+    <div className="w-full   p-2 mt-4 border border-black nesthubmax:mt-96 nesthubmax:w-96 ml-[-10%]">
       <table className="w-full bg-white rounded-lg shadow h-6 nesthubmax:w-6">
         <thead>
           <tr className="font-serif">

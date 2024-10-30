@@ -129,14 +129,14 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
           borderRadius: '5px',
           color: '#008FFF',
           outline: 'none',
-          marginLeft: '1%',
+          marginLeft: '-10%',
           width: '100%',
         }}
       />
       <div
         className='w-full  '
         ref={mapRef}
-        style={{ height: '380px', width: '100%', marginTop: '10px' }}
+        style={{ height: '380px', width: '100%', marginTop: '10px',  marginLeft: '-10%' }}
       />
     </div>
   );
