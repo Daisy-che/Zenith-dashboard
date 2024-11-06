@@ -25,6 +25,17 @@ const Dashboard: React.FC = () => {
   const { data, loading, error } = useDrainageData();
 
   useEffect(() => {
+
+
+
+
+
+
+
+
+
+
+    
     const isLoggedIn = getCookie("isLoggedIn");
     if (!isLoggedIn) {
       router.push("/dashboard");
