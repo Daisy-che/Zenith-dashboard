@@ -134,14 +134,14 @@ const WebSocketAPIExample = () => {
           <h2 className="text-lg font-bold">Blockage Count</h2>
           <p>{blockageCount}</p>
         </div>
-        <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
+        {/* <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
           <h2 className="text-lg font-bold">Rate of Change</h2>
           <p>{rateOfChange !== null ? `${rateOfChange.toFixed(2)} cm/s` : "N/A"}</p>
-        </div>
-        <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
+        </div> */}
+        {/* <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
           <h2 className="text-lg font-bold">SMS Alerts Sent</h2>
           <p>{smsCount}</p>
-        </div>
+        </div> */}
         <div className="text-center p-4 bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg">
           <h2 className="text-lg font-bold">Alert Response Time</h2>
           <p>

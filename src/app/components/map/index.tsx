@@ -6,6 +6,7 @@ export interface Sensor {
   longitude: number;
   name: string;
   status: 'Active' | 'Inactive';
+  pulseReading?: number; // Optional pulseReading property
 }
 
 declare global {
@@ -79,14 +80,17 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
       if (mapRef.current && sensorData.length > 0) {
         const google = window.google;
 
+        // Nairobi bounds for panning and zoom restrictions
         const nairobiBounds = new google.maps.LatLngBounds(
           { lat: -1.4336, lng: 36.6500 },
           { lat: -1.1359, lng: 37.0390 }
         );
 
+        const akirachixCenter = { lat: -1.344806791215267, lng: 36.727396519765314 };
+
         const newMap = new google.maps.Map(mapRef.current, {
-          center: { lat: -1.2921, lng: 36.8219 },
-          zoom: 12,
+          center: akirachixCenter,
+          zoom: 14,
           restriction: {
             latLngBounds: nairobiBounds,
             strictBounds: true,
@@ -95,14 +99,42 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
 
         setMap(newMap);
 
+        // Create marker for Akirachix location
+        new google.maps.Marker({
+          position: akirachixCenter,
+          map: newMap,
+          title: 'Active',
+          label: {
+            text: 'Active',
+            color: 'black',
+            fontWeight: 'bold',
+            fontSize: '12px',
+          },
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: '#4CAF50', // Green for Active
+            fillOpacity: 1,
+            strokeColor: 'white',
+            strokeWeight: 2,
+            scale: 20,
+          },
+        });
+
+        // Adding other sensor markers
         sensorData.forEach((sensor) => {
-          new google.maps.Marker({
+          const iconColor = sensor.status === 'Active' ? '#4CAF50' : '#4CAF50'; // Green for Active, Red for Inactive
+
+          const sensorMarker = new google.maps.Marker({
             position: { lat: sensor.latitude, lng: sensor.longitude },
             map: newMap,
-            title: sensor.name,
-            icon: sensor.status === 'Active'
-              ? 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-              : 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              fillColor: iconColor,
+              fillOpacity: 1,
+              strokeColor: 'white',
+              strokeWeight: 2,
+              scale: 10,
+            },
           });
         });
       }
@@ -116,7 +148,7 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
   }, [sensorData, googleMapsApiKey]);
 
   return (
-    <div>
+    <div style={{ height: '100vh', width: '100vw', position: 'relative',marginTop :"-2%" }}>
       <input
         type="text"
         placeholder="Search areas within Nairobi..."
@@ -129,14 +161,16 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
           borderRadius: '5px',
           color: '#008FFF',
           outline: 'none',
-          marginLeft: '-10%',
-          width: '100%',
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          zIndex: 1,
+          width: 'calc(40% - 20px)',
         }}
       />
       <div
-        className='w-full  '
         ref={mapRef}
-        style={{ height: '380px', width: '100%', marginTop: '10px',  marginLeft: '-10%' }}
+        style={{ height: '100%', width: '100%' }}
       />
     </div>
   );

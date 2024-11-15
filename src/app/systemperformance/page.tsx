@@ -11,16 +11,16 @@ const HomePage = () => {
   return (
     <Layout>
       <div className="flex h-screen mb-6">
-        <div className="w-64  text-white flex flex-col p-5"></div>
-        <div className="flex-1 p-10">
+        <div className="w-full  text-white flex flex-col "></div>
+        <div className=" p-10">
           <Map sensorData={sensorData} />
 
           <div>
-            <SensorTable sensorData={sensorData} />
+            {/* <SensorTable sensorData={sensorData} /> */}
           </div>
         </div>
       </div>
-    </Layout>
+     </Layout>
   );
 };
 export default HomePage;
