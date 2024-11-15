@@ -103,9 +103,8 @@ const Map: React.FC<MapProps> = ({ sensorData }) => {
         new google.maps.Marker({
           position: akirachixCenter,
           map: newMap,
-          title: 'Active',
+          
           label: {
-            text: 'Active',
             color: 'black',
             fontWeight: 'bold',
             fontSize: '12px',
